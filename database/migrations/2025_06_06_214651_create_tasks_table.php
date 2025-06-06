@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attachments', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('card_id')->constrained('cards')->cascadeOnDelete();
-            $table->string('file')->nullable();
-            $table->string('link')->nullable();
-            $table->string('name')->nullable();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('parent_id')->nullable()->constrained('tasks')->cascadeOnDelete();
+            $table->string('title');
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attachments');
+        Schema::dropIfExists('tasks');
     }
 };
