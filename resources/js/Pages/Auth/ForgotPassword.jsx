@@ -53,7 +53,7 @@ export default function ForgotPassword({ status }) {
                                     </div>
                                     <div className="">
                                         <Button type="submit" variant="red" className="w-full" disabled={processing}>
-                                            Sign Up
+                                            Forgot Password
                                         </Button>
                                     </div>
                                 </form>

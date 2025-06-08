@@ -61,7 +61,7 @@ export default function ConfirmPassword() {
                                     </div>
                                     <div className="">
                                         <Button type="submit" variant="red" className="w-full" disabled={processing}>
-                                            Sign Up
+                                            Confirm Password
                                         </Button>
                                     </div>
                                 </form>
