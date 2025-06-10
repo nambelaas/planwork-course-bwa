@@ -7,7 +7,7 @@ enum WorkspaceVisibility: string
     case PRIVATE = 'Private';
     case PUBLIC = 'Public';
 
-    public static function option(): array
+    public static function options(): array
     {
         return collect(self::cases())->map(fn($item) => [
             'value' => $item->value,
